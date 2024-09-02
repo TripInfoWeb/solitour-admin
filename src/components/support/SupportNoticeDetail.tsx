@@ -2,7 +2,7 @@
 
 import { NoticeType } from '@/types/NoticeDto';
 import { format } from "date-fns";
-import GatheringUpdateDeleteButtonComponent from "../common/GatheringUpdateDeleteButtonComponent";
+import UpdateDeleteButtonComponent from '../common/UpdateDeleteButtonComponent';
 
 interface ISupportNoticeDetail {
   data: NoticeType;
@@ -39,7 +39,7 @@ const SupportNoticeDetail = ({ data, deleteHandler }: ISupportNoticeDetail) => {
           data.isDeleted == true ? 
           <div className={`bg-red-400 p-1 rounded-lg text-white`}> 삭제처리 </div>
           :
-          <GatheringUpdateDeleteButtonComponent
+          <UpdateDeleteButtonComponent
           userId={1}
           updateHref={`/service/notice/update/${data.id}`}
           deleteHandler={() => deleteHandler()}
